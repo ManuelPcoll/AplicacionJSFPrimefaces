@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<p:outputLabel value="Llamada web service rest"></p:outputLabel>
+
+<h:form id="ws">
+	<p:commandButton value="Web service resultado futbol"
+		action="#{beanLlamdaWS.llamadaWS}" update="ws:mostrar">
+	</p:commandButton>
+
+	<p:commandButton value="Web service propio"
+		action="#{beanLlamdaWS.llamadaWSPropio}" update="ws:salida">
+	</p:commandButton>
+
+	<p:commandButton value="Cabecera llamada Web service"
+		action="#{beanLlamdaWS.llamadaWSCabecera}" update="ws:cabeceraRequest">
+	</p:commandButton>
+
+
+
+	<h:outputText id="mostrar" value="#{beanLlamdaWS.resultado}">
+	</h:outputText>
+
+	<h:outputText id="salida" value="#{beanLlamdaWS.salida}">
+	</h:outputText>
+
+	<br></br>
+	<br></br>
+	<br></br>
+
+	<h:outputText id="cabeceraRequest" value="#{beanLlamdaWS.salidaWSPropia}" escape="false">
+	</h:outputText>
+
+</h:form>
+</html>
